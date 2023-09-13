@@ -1,0 +1,24 @@
+<?php
+$servername = "xxxx";
+$username = "xxx";
+$password = "xxx";
+$dbname = "xxxxx";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// $sql = "INSERT INTO MyData (access_token, refresh_token, token_type)
+// VALUES ('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc2Y2Q5M2QzM2U3YTIwZDQwNWRkOGQwNTEyZDZiNDIyYWQ1NjMxMWVlOTY0NDI0OTM3ZTViYzIyYjhjMWZjNGNiNDg0MDY1MGY1YWU3OTFlIn0.eyJhdWQiOiI5NWY3NmFhZS0xZTFjLTRkYjMtOTYxMy1hNjM3NjQ3NTJkOTQiLCJqdGkiOiI3NmNkOTNkMzNlN2EyMGQ0MDVkZDhkMDUxMmQ2YjQyMmFkNTYzMTFlZTk2NDQyNDkzN2U1YmMyMmI4YzFmYzRjYjQ4NDA2NTBmNWFlNzkxZSIsImlhdCI6MTY5NDU1NTEzMSwibmJmIjoxNjk0NTU1MTMxLCJleHAiOjE2OTQ2NDE1MzEsInN1YiI6IjEwMDc3MTE4IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxMjkwMjQyLCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOiJ2MiIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXX0.Nc7VU0pBQd0_zBLokmKdiZImFOdqvsVkWBvFb7IoMCHN2JIZdC08R8sun_2h-e3RZIRiKRdeM0jsfdaIKSd4-1kPvZmiQE4hEOFA3f_yBAoJ_xORlI1WOMRn7VXd2osNJYJ9Ne9Oq3E5juoHXIb8-YWvy36gl-Gqca3AfXK-xWj8Ar4RWR_RozlTunX6MaN9KeaaeThp513s6t1heDMENsvQT_kkBtKah7RfM5Ysvv_1qFewUiNDjFSDYv8xnnp3gPFFWtdLYIj_4b0Uet5iSAKZOe2nff_4ZERjXcp2CYmzP3orM1WsasHGoSKa11qO8izg4o4HfUynkmmaiIzg3A', 'def50200078a58152f1b21cab4c688226f6be9900828514d14c254adadc0ae3a82e88348fb3ba5545dc6056f6ad3d839bbb8877696ba8e5e1a3a884fc024ccb4bb0af2c04da5acd4304105fa924489eacbbc81b543dbf8f043259893eff1da4c2a5f22f9336cb4ebf1099138b5d4170fe5173af52d60ab4fd5fad118cba3fbb4d0e085dc4deb30943800b9b5b4235fd738ecd67fec3c8141103f36f6e3ac742a5901f837a3c55688c9e1473adba2af3a28e6adba1746c1d577765f0a5d4d42c7f1ca072da8b0c0a0034bca1a84ac23b2d07d73f2b50218f54d1270c26c3a585c1fb06bbe24fc98ec2960356ad7879405ce89c3fe2e7c12d6b56a38c07c1b07657ae15fd5f42b14cdd9e0f92cd6801c1045f4eb40c57e53b7d9ab3a6be443bd072b58c826bbac7705ffac74a6cf553c926b3ef6f133d80688c7d2b77570c57d6609066a38ffe4b6ad02dd743112178a7a6cd20b4c4235754c4760170cdd9ba5556021a6881a233a0cd9a4a4acd5bfb9dc1b8b1c6d3449ca2d5b5bfa56950c454140c810f89d7d1261decbafc8f2f0df0e7508d0e9a7f0b53fe60b6f5dfbf21d46875f9cc0c56387430eece5ab3e76d2aa650ae10f289f65b31d5c5c755abe1c0977e96260841bfe66cf3ed3a2db985bb75c590a7a9f52ebb390bf4f10f43b9d2d45d92f53ad6e350830370435488e9644d7', 'Bearer')";
+
+// if ($conn->query($sql) === TRUE) {
+//     echo "New record created successfully";
+//   } else {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+//   }
+
+?>
