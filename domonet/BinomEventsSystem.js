@@ -1,4 +1,5 @@
 
+
 const SCROLL_VALUE_EVENT8= 53; // Scrolling value for triggering event8, which indicates user's engagement
 const VIEW_TIME_EVENT8 = 65; // View time value for triggering event 8, which helps to filter pseudo-engagement
 
@@ -10,10 +11,9 @@ var click_time = Date.now();
 var timedelta = 0;
 var sentP = 0; // for scrollPusher
 var DOMAIN = window.location.hostname;
-
 var event_sent = false;
 
-// console.log('behaviour.js initiated - v. 1.2b')
+console.log('behaviour.js initiated - v. 1.2b')
 //console.log('init ok')
 
 function pushEvent(event, value){
@@ -21,8 +21,7 @@ function pushEvent(event, value){
         img.remove();
     }
     var img = document.createElement('img');
-    // img.src = wrapUrlWithClickId('https://' + DOMAIN + '/click.php?'+ event +'=' + value );
-	img.src = wrapUrlWithClickId('https://' + DOMAIN + '/click?upd_clickid={clickid}&upd_key=1&'+ event +'=' + value);
+    img.src = wrapUrlWithClickId('https://' + DOMAIN + '/click.php?'+ event +'=' + value );
     img.referrerPolicy = 'no-referrer-when-downgrade';
     img.style.display = 'none';
     document.body.appendChild(img);
@@ -34,8 +33,7 @@ function pushAddEvent(event, value){
         img.remove();
     }
     var img = document.createElement('img');
-    // img.src = wrapUrlWithClickId('https://' + DOMAIN + '/click.php?add_'+ event +'=' + value );
-	img.src = wrapUrlWithClickId('https://' + DOMAIN + '/click?upd_clickid={clickid}&upd_key=1&add_'+ event +'=' + value);
+    img.src = wrapUrlWithClickId('https://' + DOMAIN + '/click.php?add_'+ event +'=' + value );
     img.referrerPolicy = 'no-referrer-when-downgrade';
     img.style.display = 'none';
     document.body.appendChild(img);
