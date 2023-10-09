@@ -3,7 +3,7 @@ define('YOUR_DIR', '../../../');
 
 $click = $_REQUEST['click'];
 $arb = $_REQUEST['arb'];
-$ApiKey='30000019ce789af5b6eb1b1c536cc722302869e';
+$ApiKey='30000019ce789af335b6eb1b1c536cc722302869e';
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
