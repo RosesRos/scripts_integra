@@ -4,6 +4,6 @@ require "db.php";
 $subdomain     = '5wsigcmzgt'; // поддомен AmoCRM
 $client_secret = 'Gb9wKRtL7Et8mDNRZ4Qrvu0G8QB3rmckJa4Lm4NyVZZCPavA8LwnlQmXf8sdFkto'; // Секретный ключ
 $client_id     = '95f76aae-1e1c-4db3-9613-a63764752d94'; // ID интеграции
-$code          = 'def502008b3578e590038cfc5876178a6e44e512ce69f6fc4f3e95d338b1414fe5a02ecdf48c216919bdbc3920ac86762a2dd73b2ec25299b4dbf3c5df5466c55a5ef71960c86632c39ca20ac5f70abaf5e52fd5d79a9d6652fb478e3f2dc83812a8df82263dcf70e80f94c7c0b8bd9d235e6ccfbf5f16317eefda43ce3f73ff903c2661f49d067f1fe60c189cbccbf2b98c17db41b6217a61ac343edc18c71fe88c166f1fceca3776684afa43e3febbda8eeb3dd659085e0705a96987c584a8edbac58d75ade60e050f78af4fb8fca46fc6071772f3fa08d0b225e174f2bd18df6d45214dab23ab582eacc4dac8b1a3ea3e7e85537b59741bb4b32772938113e1c77d2723ebb6764717359df60a17e64b53dbbb3caaf0908e58a886eb7b12488cce8f3d8d40f0cc834493ee833cdf4946d40dd4ac7a5e9a71d002b26157a4382602c9efce25134daa2c4b6ed76892f814601644d14d22606bde67cf2877d969e99fcc443391f4f6d0fce5a55545b55660770710c8a742b9ce68ab32b28be171c1b91ff3be87a4329f93b435cd617f66050f8a62d85cf0611ae05c7b4c6651cb617c1973cebb24decb373bfd349746250ee591edd178da7c5b47013c90711dc799bd12a3513a70081b73f77bfb81729643a0047f7b73a0fabb6f2e911560ea7416ca5afb0cee8ba50219eb4bd9'; // Код авторизации
+$code          = 'xxx'; // Код авторизации
 $token_file    = 'tokens.txt';
 $redirect_uri  = 'https://lure.lovestoblog.com';
