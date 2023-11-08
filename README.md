@@ -1,1 +1,1 @@
-# amo_integra
+# Here you can find scripts for integration
