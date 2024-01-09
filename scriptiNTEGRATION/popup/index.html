@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Example</title>
+    
+</head>
+<body>
+
+    <div>
+        <h2>test popup</h2>
+    </div>
+
+    <div id="contentPopup"></div>
+
+    <script>
+        const contentPopup = document.getElementById("contentPopup");
+
+        var productImage = "https://img-va.myshopline.com/image/store/2004358349/1677984556255/3-1000x1000-65_128x.jpg?w=1000&amp;h=1000";
+        var productName = 'Air Jordan';
+
+        const styles = `
+          .mainPopup{position: fixed;z-index: 129;box-sizing: border-box;overflow: visible;transition: transform 1s;font-family: Helvetica, Arial, sans-serif;letter-spacing: normal;line-height: 1.5;width: 360px;cursor: pointer;top: 130px;left: 0px;transform: translate(calc(-100% - 20px))}.mainPopup.activePopup{transform: translate(30px)}
+        `;
+        const styleSheet = new CSSStyleSheet();
+        styleSheet.replaceSync(styles);
+        contentPopup.classList.add("mainPopup");
+        // Добавление стилей в документ
+        if("adoptedStyleSheets" in document) {
+            document.adoptedStyleSheets = [styleSheet];
+        } else {
+            // Для браузеров без поддержки adoptedStyleSheets
+            document.styleSheet[0].insertRule(styleSheet.cssRules[0].cssText);
+            document.styleSheet[0].insertRule(styleSheet.cssRules[1].cssText);
+            document.styleSheet[0].insertRule(styleSheet.cssRules[2].cssText);
+        }
+
+
+        function showPopup() {
+            const htmlPop = `
+              <style>._popContainer_1ukv4_1{position: relative;box-sizing: border-box;width: 100%;min-height: 96px;padding: 12px;border-radius: 4px;box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);font-size: 12px}._popContainer_1ukv4_1 ._icon_1ukv4_11{position: absolute;top: 4px;right: 4px;cursor: pointer}._popContainer_1ukv4_1 ._popContent_1ukv4_17{font-size: 12px}._popContainer_1ukv4_1 ._imgBack_1ukv4_20{display: inline-flex;align-items: center;justify-content: center;width: 64px;height: 64px;border-radius: 4px;vertical-align: middle}._popContainer_1ukv4_1 ._imgBack_1ukv4_20 ._contentImg_1ukv4_29{width: 64px;height: 64px;border-radius: 4px;vertical-align: middle;object-fit: contain}._popContainer_1ukv4_1 ._imgBack_1ukv4_20 ._defaultImg_1ukv4_36{display: inline-block;width: 24px;height: 24px;overflow: hidden;border-radius: 4px;vertical-align: middle}._popContainer_1ukv4_1 ._msg_1ukv4_44{display: inline-block;width: 250px;margin-left: 12px;vertical-align: middle}._popContainer_1ukv4_1 ._msg_1ukv4_44 ._title_1ukv4_50{display: -webkit-box;overflow: hidden;line-height: 16px;text-overflow: ellipsis;-webkit-line-clamp: 2;-webkit-box-orient: vertical}._popContainer_1ukv4_1 ._msg_1ukv4_44 ._lightTitle_1ukv4_58{width: 100%;max-height: 32px}._popContainer_1ukv4_1 ._msg_1ukv4_44 ._darkTitle_1ukv4_62{height: 32px;margin: 4px 0}._popContainer_1ukv4_1._dark_1ukv4_62{background-color: #242833;color: rgba(255, 255, 255, .5)}._popContainer_1ukv4_1._dark_1ukv4_62 ._imgBack_1ukv4_20{background: rgba(255, 255, 255, .2)}._popContainer_1ukv4_1._dark_1ukv4_62 ._msg_1ukv4_44 ._lightTitle_1ukv4_58{color: rgba(255, 255, 255, .5)}._popContainer_1ukv4_1._dark_1ukv4_62 ._msg_1ukv4_44 ._darkTitle_1ukv4_62{color: #fff}._popContainer_1ukv4_1._light_1ukv4_58{background-color: #fff;color: rgba(36, 40, 51, .5)}._popContainer_1ukv4_1._light_1ukv4_58 ._imgBack_1ukv4_20{background: #f7f8fb}._popContainer_1ukv4_1._light_1ukv4_58 ._msg_1ukv4_44 ._lightTitle_1ukv4_58{color: rgba(36, 40, 51, .5)}._popContainer_1ukv4_1._light_1ukv4_58 ._msg_1ukv4_44 ._darkTitle_1ukv4_62{color: #242833}._popMobileContainer_jb124_1{display: inline-block;position: relative;box-sizing: border-box;max-width: 100%;height: 36px;padding: 3px 12px 3px 3px;border: 1px solid rgba(255, 255, 255, .1);border-radius: 4px;box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);font-size: 12px}._popMobileContainer_jb124_1 ._popContent_jb124_13{font-size: 12px;white-space: nowrap}._popMobileContainer_jb124_1 ._imgBack_jb124_17{display: inline-flex;align-items: center;justify-content: center;width: 28px;height: 28px;border-radius: 4px;vertical-align: middle}._popMobileContainer_jb124_1 ._imgBack_jb124_17 ._contentImg_jb124_26{width: 28px;height: 28px;border-radius: 4px;vertical-align: middle;object-fit: contain}._popMobileContainer_jb124_1 ._imgBack_jb124_17 ._defaultImg_jb124_33{display: inline-block;width: 12px;height: 12px;overflow: hidden;border-radius: 4px;vertical-align: middle}._popMobileContainer_jb124_1 ._msg_jb124_41{display: inline-block;max-width: calc(100% - 24px);margin-left: 12px;vertical-align: middle}._popMobileContainer_jb124_1 ._msg_jb124_41 ._darkTitle_jb124_47{height: 16px;margin: 0;overflow: hidden;text-overflow: ellipsis}._popMobileContainer_jb124_1._dark_jb124_47{background: #242833;color: rgba(255, 255, 255, .5)}._popMobileContainer_jb124_1._dark_jb124_47 ._imgBack_jb124_17{background: rgba(255, 255, 255, .2)}._popMobileContainer_jb124_1._dark_jb124_47 ._msg_jb124_41 ._darkTitle_jb124_47{color: #fff}._popMobileContainer_jb124_1._light_jb124_63{background: #fff;color: rgba(36, 40, 51, .5)}._popMobileContainer_jb124_1._light_jb124_63 ._imgBack_jb124_17{background: #f7f8fb}._popMobileContainer_jb124_1._light_jb124_63 ._msg_jb124_41 ._darkTitle_jb124_47{color: #242833}._layout_1b782_1{position: fixed;z-index: 129;box-sizing: border-box;overflow: visible;transition: transform 1s;font-family: Helvetica, Arial, sans-serif;letter-spacing: normal;line-height: 1.5}._layout_1b782_1._pc_1b782_11{width: 360px;cursor: pointer}._layout_1b782_1._pc_1b782_11._top_1b782_15{top: 130px}._layout_1b782_1._pc_1b782_11._bottom_1b782_18{bottom: 30px}._layout_1b782_1._pc_1b782_11._right_1b782_21{right: 0;transform: translate(calc(100% 20px))}._layout_1b782_1._pc_1b782_11._right_1b782_21._active_1b782_25{transform: translate(-30px)}._layout_1b782_1._pc_1b782_11._left_1b782_28{left: 400px;transform: translate(calc(-100% - 20px))}._layout_1b782_1._pc_1b782_11._left_1b782_28._active_1b782_25{transform: translate(30px)}._layout_1b782_1._mobile_1b782_35{top: 72px;max-width: 100%;padding: 0 12px}._layout_1b782_1._mobile_1b782_35._right_1b782_21{right: 0;transform: translate(100%)}._layout_1b782_1._mobile_1b782_35._right_1b782_21._active_1b782_25{transform: translate(0)}._layout_1b782_1._mobile_1b782_35._left_1b782_28{left: 0;transform: translate(-100%)}._layout_1b782_1._mobile_1b782_35._left_1b782_28._active_1b782_25{transform: translate(0)}._layout_1b782_1._preview_1b782_54{transition: none;pointer-events: none}</style>
+              
+              <div class="_popContainer_1ukv4_1 _dark_1ukv4_62"><span class="_icon_1ukv4_11" id="close"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5L15 15" stroke="white" stroke-width="1.5"></path><path d="M15 5L5 15" stroke="white" stroke-width="1.5"></path></svg></span><div class="_popContent_1ukv4_17"><div class="_imgBack_1ukv4_20"><img class="_contentImg_1ukv4_29" id="imgNew" width="0" src="${productImage}"></div><div class="_msg_1ukv4_44"><div class="_title_1ukv4_50 _lightTitle_1ukv4_58">Drake purchased in Boston, US</div><p class="_title_1ukv4_50 _darkTitle_1ukv4_62">${productName} 1 High OG WMNS “Court Purple”</p><div class="_lightTitle_1ukv4_58" id="newTime">12 minutes ago</div></div></div></div>
+            `;
+            contentPopup.innerHTML = htmlPop;
+
+            let currentIndex = 0;
+            
+            function displayTime() {
+              var randomNumber = Math.floor(Math.random() * 100) + 1;
+              let timeElement = document.querySelector("#newTime");
+              timeElement.innerHTML = randomNumber + " minutes ago";
+            }
+            // displayTime();
+
+            function closePopup() {
+                let close = document.querySelector("#close");
+                close.addEventListener("click", function() {
+                    contentPopup.style.transform = "translate(calc(-100% - 20px))";
+                });
+            }
+            closePopup();
+
+            let active = false;
+            function activePopup() {
+                setTimeout(() => {
+                    active = true;
+                    if (active == true) {
+                      contentPopup.classList.add("activePopup");
+                      setTimeout(() => {
+                        active = false;
+                        if (active != true) {
+                          contentPopup.classList.remove("activePopup");
+                        }
+                      }, 3000);
+                    }
+                }, 5000);
+            }
+            // activePopup();
+
+            const interval = 10000; // Интервал в миллисекундах (в данном случае 5000 миллисекунд или 5 секунд)
+            const numberOfPopups = 5; // Количество попапов
+            for (var i = 0; i < numberOfPopups; i++) {
+              setTimeout(activePopup, i * interval);
+              setTimeout(displayTime, i * 9000);
+            }
+        }
+        showPopup();
+        
+    </script>
+
+</body>
+</html>
